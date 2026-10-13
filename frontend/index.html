@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow — Project and task management</title>
+    <meta name="description" content="TaskFlow is a lightweight project management tool for teams: Kanban boards, role-based permissions, comments, activity history and a live dashboard." />
+    <meta name="theme-color" content="#2563eb" />
+    <script>
+      // Apply the saved appearance before the page paints (see src/theme.js).
+      try {
+        var pref = (JSON.parse(localStorage.getItem('taskflow-theme') || '{}').state || {}).theme || 'light';
+        if (pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      } catch (e) { /* storage unavailable: stay light */ }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><rect x='7' y='8' width='5' height='16' rx='2' fill='white'/><rect x='14' y='8' width='5' height='12' rx='2' fill='white' opacity='.85'/><rect x='21' y='8' width='5' height='8' rx='2' fill='white' opacity='.7'/></svg>" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
